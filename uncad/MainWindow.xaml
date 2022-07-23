@@ -90,6 +90,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="22"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="40"/>
             </Grid.RowDefinitions>
 
             <Rectangle Grid.ColumnSpan="2" Grid.Row="0" Fill="#FF4C4C4F" />
@@ -108,7 +109,7 @@
 		    Grid.Column="0"
 		    Width="20"
 		    Height="20"
-		    Margin="1" 
+		    Margin="1" Source="/Res/logo_uc.png"
 		    x:Name="UpperLogoImage" RenderOptions.BitmapScalingMode="Fant"/>
                 <TextBlock
 		    Grid.Column="1"
@@ -178,18 +179,11 @@
 			    Stroke="AliceBlue"
 			    StrokeThickness="1" />
                 </Button>
-
-                <ProgressBar
-                    x:Name="ProgressAsyncPB" ToolTip="Обновление данных приложения"
-                  Style="{StaticResource MaterialDesignCircularProgressBar}"
-                  Value="0" Grid.Column="2" Width="18" Height="18"
-                  IsIndeterminate="True"  Margin="20, 0"/>
-                <materialDesign:PackIcon Kind="CheckAll" x:Name="AllDonePI" ToolTip="Приложение готово к работе"
-                                         Foreground="AntiqueWhite"
-                                         Grid.Column="2" VerticalAlignment="Center" Margin="20, 0" Visibility="Collapsed"/>
             </Grid>
 
             <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Grid.Row="1"/>
+            
+            
         </Grid>
     </Border>
 </Window>
