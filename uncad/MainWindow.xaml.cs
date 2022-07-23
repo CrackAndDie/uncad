@@ -20,43 +20,27 @@ namespace uncad
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static MainWindow Instance { get; private set; }
+
         public MainWindow()
         {
             InitializeComponent();
             this.WindowStyle = WindowStyle.None;
-        }
 
-        private void MinimizeButtonClick(object sender, RoutedEventArgs e)
-        {
-            this.WindowState = WindowState.Minimized;
-        }
-
-        private void MaximizeButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.WindowState = WindowState.Maximized;
-        }
-
-        private void RestoreButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.WindowState = WindowState.Normal;
-        }
-
-        private void CloseButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
+            Instance = this;
         }
 
         private void RefreshMaximizeRestoreButton()
         {
             if (this.WindowState == WindowState.Maximized)
             {
-                this.maximizeButton.Visibility = Visibility.Collapsed;
-                this.restoreButton.Visibility = Visibility.Visible;
+                ThisHeader.maximizeButton.Visibility = Visibility.Collapsed;
+                ThisHeader.restoreButton.Visibility = Visibility.Visible;
             }
             else
             {
-                this.maximizeButton.Visibility = Visibility.Visible;
-                this.restoreButton.Visibility = Visibility.Collapsed;
+                ThisHeader.maximizeButton.Visibility = Visibility.Visible;
+                ThisHeader.restoreButton.Visibility = Visibility.Collapsed;
             }
         }
 
