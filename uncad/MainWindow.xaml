@@ -20,7 +20,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="22"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="40"/>
+                <RowDefinition Height="46"/>
             </Grid.RowDefinitions>
 
             <Rectangle Grid.ColumnSpan="2" Grid.Row="0" Fill="#FF4C4C4F" />
@@ -28,8 +28,41 @@
             <controls:WindowHeader x:Name="ThisHeader" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"/>
 
             <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Grid.Row="1"/>
-            
-            
+
+            <materialDesign:Card Grid.Row="2">
+                <TabControl
+                    HorizontalContentAlignment="Center"
+                    materialDesign:ColorZoneAssist.Mode="PrimaryLight"
+                    materialDesign:NavigationRailAssist.SelectionCornerRadius="5"
+                    materialDesign:NavigationRailAssist.ShowSelectionBackground="True"
+                    Style="{StaticResource MaterialDesignNavigationRailTabControl}" x:Name="MyTabControl"
+                    TabStripPlacement="Top" SelectionChanged="MyTabControl_SelectionChanged" >
+                    <TabItem Width="110" Height="38" Margin="0, 4">
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Width="26" Height="26" Kind="InformationOutline" />
+                                <TextBlock Text="Главная" FontSize="18" Margin="4, 0"/>
+                            </StackPanel>
+                        </TabItem.Header>
+                    </TabItem>
+                    <TabItem Width="130" Height="38">
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Width="26" Height="26" Kind="TimerCogOutline" />
+                                <TextBlock Text="Таймер" FontSize="18" Margin="4, 0"/>
+                            </StackPanel>
+                        </TabItem.Header>
+                    </TabItem>
+                    <TabItem Width="130" Height="38">
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Width="26" Height="26" Kind="HelpCircleOutline" />
+                                <TextBlock Text="Рандом" FontSize="18" Margin="4, 0"/>
+                            </StackPanel>
+                        </TabItem.Header>
+                    </TabItem>
+                </TabControl>
+            </materialDesign:Card>
         </Grid>
     </Border>
 </Window>

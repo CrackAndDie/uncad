@@ -53,5 +53,10 @@ namespace uncad
         {
 
         }
+
+        private void MyTabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
